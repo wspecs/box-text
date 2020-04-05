@@ -1,0 +1,14 @@
+Description=Node.js textbelt Http Server
+
+[Service]
+Environment="NODE_ENV=production"
+PIDFile=/tmp/textbelt.pid
+User=user-data
+Group=user-data
+Restart=always
+KillSignal=SIGQUIT
+WorkingDirectory=/usr/local/lib/textbelt
+ExecStart=/usr/bin/node server/app.js
+
+[Install]
+WantedBy=multi-user.target
